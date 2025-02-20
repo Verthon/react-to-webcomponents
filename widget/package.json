@@ -1,0 +1,28 @@
+{
+  "name": "widget",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rsbuild build",
+    "check": "biome check --write",
+    "dev": "rsbuild dev --open",
+    "format": "biome format --write",
+    "preview": "rsbuild preview",
+    "start": "pnpm run build && sirv dist --port 5555 --cors --dev"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@rsbuild/core": "^1.2.8",
+    "@rsbuild/plugin-react": "^1.1.0",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.1",
+    "react-to-webcomponent": "2.0.1",
+    "sirv-cli": "3.0.1",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
