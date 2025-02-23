@@ -1,12 +1,13 @@
-import './App.css';
+import styles from "./App.module.css";
+import "./global.css";
 
 const App = () => {
-  return (
-    <div className="content">
-      <h1>React 18 Webcomponent ?</h1>
-      <p>ESM version</p>
-    </div>
-  );
+	return (
+		<div className={styles.content}>
+			<h1>React 18 Webcomponent ?</h1>
+			<p>ESM version</p>
+		</div>
+	);
 };
 
 export default App;

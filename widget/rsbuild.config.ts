@@ -15,6 +15,14 @@ export default defineConfig({
 
 				return "[name].[contenthash:8].js";
 			},
+
+			css: (pathData) => {
+				if (pathData.chunk?.name === "index") {
+					return "index.css";
+				}
+
+				return "[name].[contenthash:8].css";
+			},
 		},
 	},
 
