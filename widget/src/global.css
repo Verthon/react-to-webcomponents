@@ -1,4 +1,9 @@
 :host {
 	all: initial;
-	font-family: "Ubuntu", serif;
+	--primary-color: #540b0e;
+	--dark-neutral: #335c67;
+  --main-font: "Ubuntu";
+
+
+  font-family: var(--main-font), serif;
 }

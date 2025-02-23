@@ -13,11 +13,13 @@ Folders
 ## Styling problems
 
 - shadow root or not ? Shadow-root with variant "open" will allow to fully (almost, you need to reset inheritance) isolate the styles
+- should widget respect global host zoom and font-size ? - scaling rems of our widget
 
 ## Performance issues
 
 - currently with `react-to-webcomponent` I'm forced to create one JS chunk with everything bundled together
   - most likely we could try to add chunks imperatively in web-component lifecycle however it is problematic due to random names for the async chunks
+- how will parent app component rerenders, remounts etc affect widget ?
 
 ## React 18 problems with web-components
 
