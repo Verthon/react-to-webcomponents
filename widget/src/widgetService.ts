@@ -25,9 +25,9 @@ const mergeTheme = (base: Theme, partial?: Partial<Theme>): Theme => {
 		...base,
 		colors: {
 			...base.colors,
-			...partial.colors,
+			...partial?.colors,
 		},
-		fontFamily: partial.fontFamily ?? base.fontFamily,
+		fontFamily: partial?.fontFamily ?? base.fontFamily,
 	};
 };
 
@@ -43,13 +43,13 @@ export const createWidgetService = (
 	};
 
 	const applyTheme = (theme: Theme, el: HTMLElement) => {
-		el.style.setProperty("--mywidget-primary", theme.colors.primary);
-		el.style.setProperty("--mywidget-dark-neutral", theme.colors.darkNeutral);
+		el.style.setProperty("--primary-color", theme.colors.primary);
+		el.style.setProperty("--dark-neutral", theme.colors.darkNeutral);
 		el.style.setProperty(
 			"--mywidget-medium-neutral",
 			theme.colors.mediumNeutral
 		);
-		el.style.setProperty("--mywidget-font-family", theme.fontFamily);
+		el.style.setProperty("--main-font", theme.fontFamily);
 	};
 
 	return {

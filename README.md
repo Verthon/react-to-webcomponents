@@ -1,5 +1,15 @@
 # Transforming React 18 Component into Web Component
 
+## Guiding principles
+
+- as small changes/config on the client possible
+- full styling encapsulation (widget cannot break the host in terms of CSS)
+- secure
+- with as small as possible layout shifts when mounting
+- works with any frontend framework
+- should be easily added to the part of the host page, whenever they point
+- white-labelling parts like Zendesk in terms of theming it to match host application look and feel
+
 Folders
 
 - client - Vue 3 with Rsbuild based on <https://vue-loader.vuejs.org/> unable to run web-component
@@ -9,6 +19,9 @@ Folders
 ## Client - Widget communication
 
 - window based or something else ?
+  - when to attach public API on window ?
+  - white labeling components for theming
+- is this component ready ? How to make sure client can use our public API without any problem
 
 ## Styling problems
 
@@ -30,14 +43,19 @@ Wrapper for web-components to use it easily in react <https://www.npmjs.com/pack
 
 ## Things to cover
 
-- find the limitations of `react-to-webcomponent` library
-- events
-- theming from outside
+- find the limitations of `react-to-webcomponent` library for transforming React 18/19 components to web-component
+- events, communication between client and the widget (change theme, change locale, remove widget, show, hide)
+- theming from the client perspective
 - way for web-component to encapsulate styles (shadow dom with randomized classes)
 - error handling on the widget side
 - logs when things go wrong (only when client explicitly add config to do so, to not bloat their console)
 - add react client (React 17/18 and React 19)
-- do we need versioning ?
+- do we need versioning on the widget side ?
+  - evergreen feels the best (ideally specify when breaking change may be introduced)
+  - semantic-versioning (not so suitable, maintenance overhead)
+  - host-defined (probably hard to coordinate)
+- how we make sure that client is authenticated ? We can't let him the chunks if invalid api-key or whatever that authenticates them
+- authorization
 
 ## UX issues
 
@@ -47,3 +65,11 @@ Wrapper for web-components to use it easily in react <https://www.npmjs.com/pack
 ## Browsers support
 
 Declarative shadow-dom doesn't support iOS 15 <https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals#browser_compatibility>
+
+## Current public API
+
+Client integration
+
+1. Add script to the HTML  <script async type="module" src="http://address-here.domain/index.js?key=YOUR_KEY" data-key="ALTERNATIVELY_YOUR_KEY"></script>
+2. (Optional) Before web-component is rendered configure theme -> window.wt.configureTheme({ colors: { primary: "red" }, fontFamily: 'Poppins' //etc });
+3. Use web-component in the framework <react-app></react-app>

@@ -24,6 +24,7 @@ export default defineConfig({
 				return "[name].[contenthash:8].css";
 			},
 		},
+		minify: false,
 	},
 
 	performance: {
