@@ -1,0 +1,29 @@
+{
+	"name": "widget-iframe",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "rsbuild build",
+		"check": "biome check --write",
+		"dev": "rsbuild dev --open",
+		"format": "biome format --write",
+		"preview": "rsbuild preview",
+		"start": "pnpm run build && sirv dist --port 5555 --cors --dev"
+	},
+	"dependencies": {
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"styled-components": "5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@rsbuild/core": "^1.2.11",
+		"@rsbuild/plugin-react": "^1.1.1",
+		"@types/react": "^18.3.18",
+		"@types/react-dom": "^18.3.5",
+		"@types/styled-components": "5",
+		"sirv-cli": "^3.0.1",
+		"typescript": "^5.7.3"
+	}
+}

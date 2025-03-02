@@ -1,5 +1,5 @@
 {
-  "name": "react-18",
+  "name": "vanilla-client",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -8,18 +8,11 @@
     "check": "biome check --write",
     "dev": "rsbuild dev --open",
     "format": "biome format --write",
-    "preview": "pnpm run build && rsbuild preview"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "preview": "rsbuild preview"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@rsbuild/core": "^1.2.8",
-    "@rsbuild/plugin-react": "^1.1.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@rsbuild/core": "^1.2.11",
     "typescript": "^5.7.3"
   }
 }

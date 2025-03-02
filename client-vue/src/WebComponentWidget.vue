@@ -1,14 +1,20 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-import IframeWidget from "./IframeWidget.vue";
-import WebComponentWidget from "./WebComponentWidget.vue";
+import { onMounted, onUnmounted } from "vue";
+
+onMounted(() => {
+	if (window.wt) {
+	}
+});
+
+onUnmounted(() => {
+  console.log('destroyed')
+  window.wt.destroy();
+})
+
 </script>
 
 <template>
-	<HelloWorld msg="Vite + Vue" />
-	<WebComponentWidget />
-	<p>test2</p>
-	<IframeWidget />
+	<react-app></react-app>
 </template>
 
 <style scoped>
